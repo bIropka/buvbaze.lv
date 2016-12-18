@@ -965,9 +965,6 @@ aside {
     top: 1px;
     bottom: 1px;
 }
-.categories > li:hover .sub-categories {
-    display: block;
-}
 
 .categories .sub-categories, .categories .sub-categories .links {
     position: absolute;
@@ -975,6 +972,10 @@ aside {
     top: 0;
     border: 1px solid #d7d7d7;
     border-left: none;
+}
+.categories .sub-categories.to-top, .categories .sub-categories .links.to-top {
+    top: auto;
+    bottom: 0;
 }
 .categories .sub-categories > li > a {
     background: #ffffff;
@@ -1014,8 +1015,7 @@ aside {
     z-index: 1;
 }
 
-.categories .sub-categories > li:hover .links {
-    display: block;
+.categories .sub-categories > li .links {
     left: 337px;
 }
 .categories .sub-categories > li .links {

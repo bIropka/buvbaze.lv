@@ -34,6 +34,31 @@ $(document).ready(function () {
     });
 
 
+    $('.categories > li').hover(
+        function() {
+            if($(this).offset().top - $(window).scrollTop() > $(window).height()/2) {
+                $(this).find('.sub-categories').addClass('to-top');
+            }
+            $(this).find('.sub-categories').fadeIn(0);
+        },
+        function() {
+            $(this).find('.sub-categories').fadeOut(0);
+            $(this).find('.sub-categories').removeClass('to-top');
+        });
+
+    $('.sub-categories > li').hover(
+        function() {
+            if($(this).offset().top - $(window).scrollTop() > $(window).height()/2) {
+                $(this).find('.links').addClass('to-top');
+            }
+            $(this).find('.links').fadeIn(0);
+        },
+        function() {
+            $(this).find('.links').fadeOut(0);
+            $(this).find('.links').removeClass('to-top');
+        });
+
+
     /******************************************************************************************************************
      ******* clicks scripts
      ******************************************************************************************************************/
