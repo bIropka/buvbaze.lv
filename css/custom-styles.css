@@ -1,3 +1,16 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "buvbazelv";
+    src:url("../source/fonts/buvbazelv.eot");
+    src:url("../source/fonts/buvbazelv.eot?#iefix") format("embedded-opentype"),
+    url("../source/fonts/buvbazelv.woff") format("woff"),
+    url("../source/fonts/buvbazelv.ttf") format("truetype"),
+    url("../source/fonts/buvbazelv.svg#buvbazelv") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
 @font-face {
     font-family: 'Ubuntu Regular';
     src: url("../source/fonts/UbuntuRegular.woff") format("woff"), url("../source/fonts/UbuntuRegular.ttf") format("truetype");
@@ -15,6 +28,111 @@
     src: url("../source/fonts/UbuntuMedium.woff") format("woff"), url("../source/fonts/UbuntuMedium.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
+}
+
+/**********************************************************************************************************************
+********** iconic font
+***********************************************************************************************************************/
+[data-icon]:before {
+    font-family: "buvbazelv" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "buvbazelv" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bl-main-page:before {
+    content: "\61";
+}
+.icon-bl-goods:before {
+    content: "\62";
+}
+.icon-bl-inner:before {
+    content: "\63";
+}
+.icon-bl-communication:before {
+    content: "\64";
+}
+.icon-bl-building:before {
+    content: "\65";
+}
+.icon-bl-project:before {
+    content: "\66";
+}
+.icon-bl-machines:before {
+    content: "\67";
+}
+.icon-bl-chemistry:before {
+    content: "\68";
+}
+.icon-bl-otdmaterials:before {
+    content: "\69";
+}
+.icon-bl-bmaterials:before {
+    content: "\6a";
+}
+.icon-bl-windows:before {
+    content: "\6b";
+}
+.icon-bl-sanitarium:before {
+    content: "\6c";
+}
+.icon-bl-services:before {
+    content: "\6d";
+}
+.icon-bl-design:before {
+    content: "\6e";
+}
+.icon-bl-bservices:before {
+    content: "\6f";
+}
+.icon-bl-bstock:before {
+    content: "\70";
+}
+.icon-bl-catalog:before {
+    content: "\71";
+}
+.icon-bl-news:before {
+    content: "\72";
+}
+.icon-bl-builders:before {
+    content: "\73";
+}
+.icon-bl-forum:before {
+    content: "\74";
+}
+.icon-bl-emachines:before {
+    content: "\75";
+}
+.icon-bl-house:before {
+    content: "\76";
+}
+.icon-bl-tools:before {
+    content: "\77";
+}
+.icon-bl-condition:before {
+    content: "\78";
+}
+.icon-bl-warm:before {
+    content: "\79";
 }
 
 /**********************************************************************************************************************
@@ -200,7 +318,7 @@ header[role='banner'] {
     margin-right: 32px;
     position: relative;
 }
-.header-top .custom-select:after, .header-top .custom-menu.menu-personal:after {
+.custom-select .current-value:after, .custom-menu.menu-personal .control:after {
     content: '';
     display: block;
     width: 0;
@@ -217,7 +335,7 @@ header[role='banner'] {
     -o-transition: 0.4s;
     transition: 0.4s;
 }
-.header-top .custom-select.active:after, .header-top .custom-menu.menu-personal.active:after {
+.custom-select.active .current-value:after, .custom-menu.menu-personal.active .control:after {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -308,7 +426,6 @@ header[role='banner'] {
 }
 .custom-select .popup-select .item {
     border-bottom: 1px solid #ffb73b;
-    text-align: right;
 }
 .custom-select.select-lang .popup-select .item {
     padding-right: 30px;
@@ -351,7 +468,7 @@ header[role='banner'] {
 .custom-select .popup-select .value {
     font-family: 'Ubuntu Bold', sans-serif;
     color: #000000;
-    font-size: 9px;
+    font-size: 10px;
     line-height: 20px;
     text-transform: uppercase;
     cursor: pointer;
@@ -504,7 +621,7 @@ header[role='banner'] {
     list-style: none;
     font-family: 'Ubuntu Bold', sans-serif;
     text-transform: uppercase;
-    font-size: 9px;
+    font-size: 10px;
     line-height: 20px;
     text-decoration: none;
 }
@@ -516,6 +633,36 @@ header[role='banner'] {
 }
 .menu-personal .popup-menu a:last-of-type {
     border-top: 1px solid #ffb73b;
+}
+
+.sign-block {
+    position: relative;
+    padding-left: 30px;
+    height: 48px;
+    color: #ffffff;
+}
+.sign-block:before {
+    content: '';
+    display: block;
+    width: 21px;
+    height: 21px;
+    background: transparent url('../source/images/sprite-icons-21.png') no-repeat -42px 0;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.sign-block a {
+    line-height: 48px;
+    margin: 0 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+}
+.sign-block a:hover {
+    color: #ffb73b;
 }
 
 /**********************************************************************************************************************
@@ -532,13 +679,28 @@ header[role='banner'] {
     position: absolute;
     left: 0;
     top: -48px;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
 }
 .header-nav .logo img {
     width: auto;
     height: auto;
     margin: auto;
+    max-width: 90%;
+    max-height: 90%;
     bottom: 0;
     right: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.header-nav.minimized .logo {
+    height: 98px;
 }
 
 nav {
@@ -560,23 +722,23 @@ nav ul li a {
     text-align: center;
     line-height: 1.2;
 }
-nav ul li a .icon-nav {
+nav ul li a i {
+    font-size: 42px;
     display: block;
-    width: 45px;
-    height: 45px;
-    margin: 15px auto 10px;
-    background: transparent url('../source/images/sprite-nav.png') no-repeat;
+    line-height: 1;
+    margin: 15px 0 8px;
 }
-nav ul li:nth-child(2) a .icon-nav {background-position: -45px 0;}
-nav ul li:nth-child(3) a .icon-nav {background-position: -90px 0;}
-nav ul li:nth-child(4) a .icon-nav {background-position: -135px 0;}
-nav ul li:nth-child(5) a .icon-nav {background-position: -180px 0;}
-nav ul li:nth-child(6) a .icon-nav {background-position: -225px 0;}
-nav ul li:nth-child(7) a .icon-nav {background-position: -270px 0;}
-nav ul li:nth-child(8) a .icon-nav {background-position: -315px 0;}
 
 nav ul li a:hover {
     background: #ffb73b;
+}
+
+.header-nav.minimized nav ul li a i {
+    display: none;
+}
+.header-nav.minimized nav ul li a {
+    height: 50px;
+    padding-top: 7px;
 }
 
 /**********************************************************************************************************************
@@ -678,11 +840,25 @@ footer[role='contentinfo'] {
     margin-top: 5px;
 }
 .footer-links ul li a {
+    display: inline-block;
+    vertical-align: middle;
     font-family: 'Ubuntu Regular', sans-serif;
     color: #ffffff;
+    text-decoration: none;
+}
+.footer-links ul li a:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-left: 5px solid #ffb73b;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    margin-right: 5px;
 }
 .footer-links ul li a:hover {
-    text-decoration: none;
+    color: #ffb73b;
 }
 
 /**********************************************************************************************************************
@@ -726,7 +902,7 @@ aside {
     text-transform: uppercase;
     text-decoration: none;
     line-height: 50px;
-    padding: 0 40px 0 60px;
+    padding: 0 40px 0 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -749,15 +925,16 @@ aside {
     bottom: 0;
     right: 20px;
 }
-.icon-category {
-    display: block;
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    left: 15px;
-    top: 9px;
-    background: transparent url('../source/images/sprite-categories.png') no-repeat 0 0;
+
+.categories i {
+    display: inline-block;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 28px;
+    margin-top: 4px;
+    margin-right: 10px;
 }
+
 .categories > li > a:before {
     content: '';
     display: block;
@@ -774,30 +951,12 @@ aside {
     transition: 0.2s;
 }
 
-.icon-category.icon-category-ematerials {background-position: 0 0;}
-.icon-category.icon-category-house {background-position: 0 -32px;}
-.icon-category.icon-category-tools {background-position: 0 -64px;}
-.icon-category.icon-category-condition {background-position: 0 -96px;}
-.icon-category.icon-category-warm {background-position: 0 -128px;}
-.icon-category.icon-category-sanitarium {background-position: 0 -160px;}
-.icon-category.icon-category-doors {background-position: 0 -192px;}
-.icon-category.icon-category-bmaterials {background-position: 0 -224px;}
-.icon-category.icon-category-otdmaterials {background-position: 0 -256px;}
-.icon-category.icon-category-bchemistry {background-position: 0 -288px;}
-.icon-category.icon-category-machines {background-position: 0 -320px;}
-.icon-category.icon-category-services {background-position: 0 -352px;}
-.icon-category.icon-category-design {background-position: 0 -384px;}
-.icon-category.icon-category-projects {background-position: 0 -416px;}
-.icon-category.icon-category-building {background-position: 0 -448px;}
-.icon-category.icon-category-communications {background-position: 0 -480px;}
-.icon-category.icon-category-inner {background-position: 0 -512px;}
-
 .categories > li > a:hover {
     color: #000000;
     background: #ffffff;
 }
-.categories > li > a:hover .icon-category, .categories .sub-categories > li > a:hover .icon-category {
-    background-position-x: -32px;
+.categories > li > a:hover i, .categories .sub-categories > li > a:hover i {
+    color: #ffb73b;
 }
 .categories > li > a:hover:after {
     border-left: 5px solid #000000;
@@ -822,8 +981,8 @@ aside {
     border: 1px solid transparent;
     color: #000000;
 }
-.categories .sub-categories > li > a .icon-category {
-    background-position-x: -64px;
+.categories .sub-categories > li > a i {
+    color: #818181;
 }
 .categories .sub-categories > li > a:after {
     border-left: 5px solid #000000;
@@ -911,6 +1070,11 @@ aside {
     border-radius: 100%;
     border: 5px solid #ffffff;
     margin-bottom: 20px;
+}
+.seller-photo:hover {
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3) ;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3) ;
 }
 .seller-name {
     color: #ffffff;
@@ -1098,7 +1262,7 @@ main section h2 {
     font-size: 12px;
     margin-top: 15px;
 }
-.form-search p span {
+.form-search .search-query {
     font-size: inherit;
 }
 

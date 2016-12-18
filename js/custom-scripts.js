@@ -17,6 +17,22 @@ $(document).ready(function () {
 
     $('.popup-links').mCustomScrollbar();
 
+    if ($(window).scrollTop() > 0) {
+        $('.header-nav').addClass('minimized');
+    } else {
+        $('.header-nav').removeClass('minimized');
+    }
+
+    $(window).scroll(function() {
+
+        if ($(window).scrollTop() > 0) {
+            $('.header-nav').addClass('minimized');
+        } else {
+            $('.header-nav').removeClass('minimized');
+        }
+
+    });
+
 
     /******************************************************************************************************************
      ******* clicks scripts
