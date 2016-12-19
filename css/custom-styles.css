@@ -867,16 +867,17 @@ footer[role='contentinfo'] {
 
 .content-block {
     margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 aside {
     display: block;
     width: 336px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    margin-right: 20px;
     background: #818181;
+    padding-bottom: 50px;
 }
 
 .categories .sub-categories, .categories .links {
@@ -1156,7 +1157,6 @@ aside {
 main {
     display: block;
     width: 100%;
-    padding-left: 356px;
 }
 
 main section {
