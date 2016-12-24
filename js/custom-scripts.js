@@ -124,6 +124,48 @@ $(document).ready(function () {
 
     });
 
+    $('.form-select').hover(
+        function() {
+
+        $(this).find('ul').fadeIn(0);
+
+    },
+        function() {
+
+            $(this).find('ul').fadeOut(0);
+
+        }
+    );
+
+    $('.form-select ul li').click(function() {
+
+        var oldValue = $(this).parents('.form-select').find('.current-value').html();
+        var newValue = $(this).html();
+
+        $(this).parents('.form-select').find('.current-value').html(newValue);
+        $(this).parents('.form-select').find('.current-value').attr('title', newValue);
+
+        $(this).html(oldValue);
+        $(this).attr('title', oldValue);
+
+        $(this).parents('.form-select').find('input').attr('value', newValue);
+
+        $(this).parents('.form-select').find('ul').fadeOut(0);
+
+    });
+
+    $('.tab-controls .control').click(function() {
+
+        var index = $(this).index();
+
+        $(this).siblings('.active').removeClass('active');
+        $('.tab-items .item.active').removeClass('active');
+
+        $(this).addClass('active');
+        $('.tab-items .item').eq(index).addClass('active');
+
+    });
+
     /******************************************************************************************************************
      ******* sliders
      ******************************************************************************************************************/

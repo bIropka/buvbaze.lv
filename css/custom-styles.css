@@ -35,6 +35,12 @@
     font-weight: 300;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Ubuntu Medium Italic';
+    src: url("../source/fonts/UbuntuMediumItalic.woff") format("woff"), url("../source/fonts/UbuntuMediumItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
 
 /**********************************************************************************************************************
 ********** iconic font
@@ -259,10 +265,10 @@ label input {
     padding: 0 25px;
 }
 
-input::-webkit-input-placeholder {color: #000000;font-size: 14px;}
-input::-moz-placeholder {color: #000000;font-size: 14px;}
-input:-moz-placeholder {color: #000000;font-size: 14px;}
-input:-ms-input-placeholder {color: #000000;font-size: 14px;}
+input::-webkit-input-placeholder {color: #000000;font-size: 12px;}
+input::-moz-placeholder {color: #000000;font-size: 12px;}
+input:-moz-placeholder {color: #000000;font-size: 12px;}
+input:-ms-input-placeholder {color: #000000;font-size: 12px;}
 
 input:focus::-webkit-input-placeholder {color: transparent;}
 input:focus::-moz-placeholder {color: transparent;}
@@ -273,10 +279,10 @@ textarea {
     resize: none;
 }
 
-textarea::-webkit-input-placeholder {color: #000000;}
-textarea::-moz-placeholder {color: #000000;}
-textarea:-moz-placeholder {color: #000000;}
-textarea:-ms-input-placeholder {color: #000000;}
+textarea::-webkit-input-placeholder {color: #000000;font-size: 12px;}
+textarea::-moz-placeholder {color: #000000;font-size: 12px;}
+textarea:-moz-placeholder {color: #000000;font-size: 12px;}
+textarea:-ms-input-placeholder {color: #000000;font-size: 12px;}
 
 textarea:focus::-webkit-input-placeholder {color: transparent;}
 textarea:focus::-moz-placeholder {color: transparent;}
@@ -1500,6 +1506,9 @@ main section h2 {
     list-style: none;
     padding: 25px 0;
 }
+.ads-list li:last-child {
+    border-bottom: none;
+}
 .ads-list li .left-column {
     width: 590px;
 }
@@ -1661,11 +1670,15 @@ main section h2 {
 ********** page personal
 ***********************************************************************************************************************/
 
+.page-personal .ads-list li {
+    border-bottom: none;
+}
+
 .page-personal h2 {
     font-size: 23px;
     padding-left: 10px;
 }
-.page-personal section, .page-item section {
+.page-personal section, .page-item section, .page-task section {
     margin-top: 0;
     margin-bottom: 2px;
 }
@@ -1975,21 +1988,21 @@ main section h2 {
     bottom: 5px;
     background: #c62a00;
 }
-.new-review .review-images {
+.new-review .gallery-images {
     margin-top: 20px;
     margin-left: 125px;
 }
-.new-review .review-images .title {
+.gallery-images .title {
     font-family: 'Ubuntu Bold', sans-serif;
     margin-bottom: 10px;
 }
-.new-review .review-images .image-wrap {
+.gallery-images .image-wrap {
     display: inline-block;
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
-.new-review .review-images .image-wrap img {
+.gallery-images .image-wrap img {
     top: 0;
     bottom: 0;
     right: 0;
@@ -2085,7 +2098,7 @@ main section h2 {
 }
 .statistics-rate {
     padding-right: 50px;
-    border-right: 1px dashed #000000;
+    border-right: 1px dotted #000000;
 }
 .statistics-rate .value, .statistics-rate .value span {
     font-size: 20px;
@@ -2161,12 +2174,14 @@ main section h2 {
     left: 18px;
 }
 .services .prices .service-name:after {
-    content: '....................................................................................................................................................................................................................................';
+    content: '';
     display: block;
+    width: 1000px;
     position: absolute;
     left: calc(100% + 3px);
-    bottom: 0;
+    bottom: 2px;
     font-family: 'Ubuntu Regular', sans-serif;
+    border-bottom: 1px dotted #000000;
 }
 .services .prices .service-cost {
     float: right;
@@ -2188,4 +2203,441 @@ main section h2 {
 
 .page-item h2 {
     font-size: 23px;
+}
+
+
+/**********************************************************************************************************************
+********** page task
+***********************************************************************************************************************/
+
+/* task card */
+.task-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.task-card-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.task-id {
+    line-height: 45px;
+}
+
+.task-card .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    background: #f3f3f3;
+    border: 1px solid #e5e5e5;
+    margin-top: 15px;
+}
+.task-card .task-details {
+    width: 45%;
+    padding: 30px 20px;
+}
+.task-card .task-details li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.task-card .task-details li:last-child {
+    margin-bottom: 0;
+}
+.task-card .task-details .detail-name {
+    width: 50%;
+    font-size: 11px;
+    color: #243e45;
+    text-transform: uppercase;
+}
+.task-card .task-details .detail-value {
+    width: 50%;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+}
+.task-card .task-details .detail-value a, .task-card .task-details .detail-value span {
+    font-family: inherit;
+}
+.task-card .task-details .detail-value span {
+    display: inline-block;
+    padding: 5px;
+    line-height: 1;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #166478;
+    margin-left: 10px;
+
+}
+.task-card .info .map-wrap {
+    width: 55%;
+}
+.task-card .text p {
+    font-family: 'Ubuntu Regular', sans-serif;
+    margin: 20px 0;
+}
+
+/* bids */
+
+.performers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.performer-card {
+    border: 1px solid #e7e7e7;
+    margin: 10px 0;
+}
+.performer-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 50px;
+}
+.performer-image {
+    width: 105px;
+    height: 105px;
+}
+.performer-info {
+    width: calc(100% - 135px);
+}
+.performer-info-header, .performer-info-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.performer-info-footer {
+    margin-top: 10px;
+}
+.performer-name {
+    font-size: 17px;
+}
+.performer-name span {
+    font-family: 'Ubuntu Regular', sans-serif;
+    color: #6e6e6e;
+}
+.product-item-reviews > div {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.product-item-reviews > div span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #243e45;
+    height: 23px;
+    line-height: 23px;
+}
+.product-item-reviews > div:before {
+    content: '';
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    background: transparent url('../source/images/sprite-hand.png') no-repeat;
+    margin-right: 5px;
+}
+.product-item-reviews .reviews-negative:before {
+    background-position: -23px 0;
+}
+.performer-details .value {
+    display: inline-block;
+    color: #6e6e6e;
+    font-size: 12px;
+    font-family: 'Ubuntu Medium Italic', sans-serif;
+}
+.performer-details .value:last-of-type {
+    display: block;
+}
+.performer-details .value span, .performer-details .value time {
+    font-size: 12px;
+    font-family: 'Ubuntu Medium Italic', sans-serif;
+    font-weight: 900;
+}
+
+.performer-info-footer .phone {
+    display: block;
+    width: 290px;
+    height: 60px;
+    line-height: 60px;
+    background: #ffc438;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 23px;
+    text-decoration: none;
+    text-align: center;
+}
+.performer-info-footer .phone:hover {
+    background: #000000;
+    color: #ffc438;
+}
+.performer-info-footer .phone:active {
+    line-height: 65px;
+}
+.performer-info-footer .email {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #818181 url('../source/images/icon-envelope.png') no-repeat center;
+}
+.performer-info-footer .email:hover {
+    background: #000000 url('../source/images/icon-envelope.png') no-repeat center;
+}
+.performer-info-footer .email:active {
+    background: #000000 url('../source/images/icon-envelope.png') no-repeat center 25px;
+}
+
+.form-select {
+    width: 205px;
+    height: 60px;
+    text-align: center;
+    position: relative;
+}
+.form-select .current-value {
+    width: 100%;
+    height: 100%;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    background: #166478;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    overflow: hidden;
+    line-height: 60px;
+    position: relative;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.form-select .current-value:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #ffb73b;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.form-select:hover .current-value:after {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.form-select ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    z-index: 10;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.form-select ul li {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    background: #ffb73b;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 12px;
+    color: #000000;
+    text-transform: uppercase;
+    overflow: hidden;
+    line-height: 60px;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.form-select ul li:hover {
+    background: #166478;
+    color: #ffffff;
+}
+.form-select label {
+    display: none;
+}
+
+/* tab */
+.tab-controls {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #e7e7e7;
+}
+.tab-controls .control {
+    margin-right: 10px;
+    line-height: 1;
+    padding: 15px;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    background: #e7e7e7;
+    border: 1px solid #e7e7e7;
+    border-bottom: none;
+    cursor: pointer;
+    position: relative;
+    bottom: -1px;
+    z-index: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tab-controls .control:first-of-type {
+    border-left: none;
+}
+.tab-controls .control:hover {
+    background: #eeeeee;
+}
+.tab-controls .control.active {
+    background: #ffffff;
+    color: #166478;
+    cursor: not-allowed;
+}
+
+.tab-items {
+    padding: 30px 25px;
+}
+.tab-items .item {
+    display: none;
+}
+.tab-items .item.active {
+    display: block;
+}
+.tab-items .item .new-review:last-of-type {
+    padding-bottom: 0;
+}
+.tab-items .item {
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+.tab-items .item > p {
+    margin: 20px 0;
+}
+.tab-items .item > p:first-of-type, .tab-items .item > p:last-of-type {
+    margin: 0;
+}
+.tab-items .item .text-info-short {
+    display: inline-block;
+    margin-right: 30px;
+}
+.tab-items .item .text-info-short strong, .tab-items .item .text-info-full strong {
+    font-family: 'Ubuntu Bold', sans-serif;
+}
+.tab-items .item .text-info-short, .tab-items .item .text-info-full {
+    margin-top: 20px;
+}
+.tab-items .item .text-info-full:first-of-type {
+    margin-top: 0;
+}
+
+/* add-order */
+.add-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.stock-info {
+    width: 48.5%;
+}
+.stock-info h2 {
+    display: block;
+    width: 100%;
+    line-height: 1;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+.stock-info .text {
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+.stock-current-info {
+    width: 222px;
+    height: 222px;
+    background: transparent url('../source/images/background-stock.jpg') center;
+    background-size: cover;
+    margin: 20px auto 0;
+    position: relative;
+}
+.stock-current-info > div {
+    display: inline-block;
+    padding: 3px 5px;
+    color: #ffffff;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 65%;
+    white-space: nowrap;
+}
+.stock-current-info > div span {
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 10px;
+    color: #ffffff;
+}
+.stock-current-info .online {
+    background: #166478;
+    top: 30%;
+}
+.stock-current-info .tasks {
+    background: #818181;
+    top: 40%;
+}
+
+.form-add-order {
+    display: block;
+    width: 48.5%;
+}
+.form-add-order label {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.form-add-order label input, .form-add-order label textarea {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: #f3f3f3;
+    border: 1px solid #e7e7e7;
+}
+.form-add-order label textarea {
+    resize: none;
+    height: 110px;
+    padding: 10px 25px;
+}
+.form-add-order .button-yellow {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.form-add-order .button-yellow:before {
+    display: inline-block;
+    position: static;
+    margin-right: 10px;
 }
