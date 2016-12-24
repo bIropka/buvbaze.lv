@@ -1665,14 +1665,13 @@ main section h2 {
     font-size: 23px;
     padding-left: 10px;
 }
-.page-personal section {
+.page-personal section, .page-item section {
     margin-top: 0;
     margin-bottom: 2px;
 }
 .page-personal main section:last-of-type {
     margin-bottom: 0;
 }
-
 
 .breadcrumbs {
     display: block;
@@ -2181,4 +2180,12 @@ main section h2 {
 .services .prices .service-cost span {
     font-family: inherit;
     color: inherit;
+}
+
+/**********************************************************************************************************************
+********** page item
+***********************************************************************************************************************/
+
+.page-item h2 {
+    font-size: 23px;
 }
