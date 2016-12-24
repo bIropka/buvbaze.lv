@@ -4,6 +4,10 @@ $(document).ready(function () {
      ******* init scripts
      ******************************************************************************************************************/
 
+    setTimeout(function() {
+        $('.slider-wrap').animate({opacity: '1'}, 500);
+    }, 500);
+    
     $(document).click(function(event) {
 
         if (!$(event.target).closest(".custom-select .current-value").length && !$(event.target).closest(".custom-select .popup-select").length &&
@@ -124,9 +128,8 @@ $(document).ready(function () {
      ******* sliders
      ******************************************************************************************************************/
 
-    $('.slider-partners').fotorama({
-        nav: 'false',
-        arrows: 'always'
+    $('.slider-partners').slick({
+        slidesToShow: 4
     });
 
 });

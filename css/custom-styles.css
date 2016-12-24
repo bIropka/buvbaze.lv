@@ -18,6 +18,12 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'Ubuntu Italic';
+    src: url("../source/fonts/UbuntuItalic.woff") format("woff"), url("../source/fonts/UbuntuItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
     font-family: 'Ubuntu Bold';
     src: url("../source/fonts/UbuntuBold.woff") format("woff"), url("../source/fonts/UbuntuBold.ttf") format("truetype");
     font-weight: 300;
@@ -282,6 +288,9 @@ textarea:focus:-ms-input-placeholder {color: transparent;}
 }
 .right-column {
     float: right;
+}
+.slider-wrap {
+    opacity: 0;
 }
 
 /**********************************************************************************************************************
@@ -1174,6 +1183,8 @@ main section h2 {
 }
 
 .section-header {
+    display: block;
+    width: 100%;
     margin-bottom: 25px;
 }
 
@@ -1457,7 +1468,7 @@ main section h2 {
     left: -25px;
     background: transparent url('../source/images/sprite-icons-21.png') no-repeat -189px 0;
 }
-.products-list li .to-product {
+.to-product {
     display: block;
     width: 100%;
     height: 40px;
@@ -1472,7 +1483,7 @@ main section h2 {
     background-size: cover;
     margin-top: 15px;
 }
-.products-list li .to-product:hover {
+.to-product:hover {
     text-shadow: none;
     color: #ffffff;
     background: transparent url('../source/images/background-button-gray.png') no-repeat;
@@ -1737,11 +1748,11 @@ main section h2 {
     width: 0;
     height: 0;
     border-left: 5px solid #166478;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
     position: absolute;
-    bottom: 5px;
-    left: 10px;
+    bottom: 7px;
+    left: 13px;
 }
 .page-personal .seller-name {
     color: #000000;
@@ -1751,10 +1762,423 @@ main section h2 {
 .company-card {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
-.company-info {
-    width: 60%;
+.company-card .company-info {
+    width: 58%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
 }
-.company-contacts {
+.company-card h1 {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.company-card .company-info .image-wrap {
+    width: 195px;
+    height: 139px;
+    border: 1px solid #e8e8e8;
+}
+.company-card .company-info .company-text {
+    width: calc(100% - 230px);
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+.company-card .company-contacts {
     width: 35%;
+    padding-top: 12px;
+}
+
+.company-card .company-contacts .reg-id, .company-card .company-contacts .reg-id span {
+    text-transform: uppercase;
+}
+.company-card .company-contacts .contacts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.company-card .company-contacts .name {
+    width: 70px;
+    text-transform: uppercase;
+    color: #243e45;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+.company-card .company-contacts .value {
+    width: calc(100% - 70px);
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.company-card .company-contacts .value a {
+    font-family: inherit;
+    font-size: inherit;
+}
+.company-card .company-contacts .contacts div:nth-child(2) a {
+    text-decoration: none;
+}
+.company-card .company-contacts .contacts div:nth-child(9) {
+    padding-top: 5px;
+}
+.company-card .company-contacts .social-links li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.company-card .company-contacts .social-links li a {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: transparent url('../source/images/sprite-social.png') no-repeat;
+}
+.company-card .company-contacts .social-links li:nth-child(2) a {
+    background-position: -22px 0;
+}
+.company-card .company-contacts .social-links li:nth-child(3) a {
+    background-position: -44px 0;
+}
+.company-card .company-contacts .social-links li:nth-child(4) a {
+    background-position: -66px 0;
+    width: 26px;
+}
+.company-card .company-contacts .social-links li a:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+/* categories-short */
+
+.categories-short ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.categories-short ul li {
+    display: block;
+    width: 33%;
+    margin: 7px 0;
+    padding: 0 30px;
+    position: relative;
+}
+.categories-short ul li:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid #166478;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    position: absolute;
+    bottom: 7px;
+    left: 18px;
+}
+.categories-short ul li a {
+    font-family: 'Ubuntu Bold', sans-serif;
+}
+.categories-short ul li span {
+    font-family: 'Ubuntu Bold', sans-serif;
+    color: #818181;
+    margin-left: 3px;
+}
+
+/* portfolio */
+.portfolio, .new-review {
+    padding-bottom: 30px;
+}
+.portfolio ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.portfolio ul li {
+    display: block;
+    width: 23%;
+}
+.portfolio ul li .image-wrap {
+    width: 100%;
+    padding-top: 70%;
+}
+.portfolio ul li .text {
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    padding: 20px 30px;
+    text-align: center;
+}
+.portfolio ul li .text p {
+    display: block;
+    height: 48px;
+    overflow: hidden;
+    font-size: 12px;
+    color: #243e45;
+}
+.portfolio ul li .to-product {
+    margin-top: 0;
+}
+
+/* new-review */
+.new-review {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.new-review .reviewer {
+    width: 105px;
+}
+.new-review .reviewer .image-wrap {
+    width: 100%;
+    padding-top: 100%;
+}
+.new-review .reviewer .reviewer-name {
+    display: block;
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 10px;
+}
+.new-review .review {
+    width: calc(100% - 125px);
+    padding-left: 50px;
+    position: relative;
+}
+.new-review .review p {
+    font-family: 'Ubuntu Italic', sans-serif;
+    color: #6e6e6e;
+    margin-bottom: 15px;
+}
+.new-review .review p:last-of-type {
+    margin-bottom: 0;
+}
+.new-review .review:before, .new-review .review:after {
+    content: '+';
+    display: block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 26px;
+    color: #ffffff;
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #73a623;
+}
+.new-review .review:after {
+    content: '\2013';
+    top: auto;
+    bottom: 5px;
+    background: #c62a00;
+}
+.new-review .review-images {
+    margin-top: 20px;
+    margin-left: 125px;
+}
+.new-review .review-images .title {
+    font-family: 'Ubuntu Bold', sans-serif;
+    margin-bottom: 10px;
+}
+.new-review .review-images .image-wrap {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.new-review .review-images .image-wrap img {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/* partners */
+
+.partners {
+    position: relative;
+}
+.partners .section-header {
+    margin-bottom: 0;
+}
+.partners .slider-wrap {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+}
+.partners .slick-arrow {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    color: transparent;
+    background: #ffc238;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+.partners .slick-prev {
+    left: -70px;
+}
+.partners .slick-prev:before, .partners .slick-next:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 15px solid #000000;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    margin: auto;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.partners .slick-next:before {
+    border-left: 15px solid #000000;
+    border-right: none;
+    left: auto;
+    right: 15px;
+}
+.partners .slick-prev:hover:before {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.partners .slick-prev:active:before {
+    left: 10px;
+}
+.partners .slick-next:hover:before {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+}
+.partners .slick-next:active:before {
+    right: 10px;
+}
+.partners .slick-next {
+    right: -70px;
+}
+
+/* statistics */
+.statistics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.statistics-rate {
+    padding-right: 50px;
+    border-right: 1px dashed #000000;
+}
+.statistics-rate .value, .statistics-rate .value span {
+    font-size: 20px;
+}
+.statistics-rate .text {
+    font-size: 15px;
+    color: #243e45;
+}
+.statistics-rate .recommendations {
+    margin: 15px 0;
+}
+.statistics-rate .note {
+    font-size: 12px;
+    font-family: 'Ubuntu Italic', sans-serif;
+    color: #243e45;
+}
+.statistics-services {
+    padding-left: 20px;
+    list-style: none;
+}
+.statistics-services li {
+    margin-bottom: 10px;
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+.statistics-services li .value {
+    display: inline-block;
+    width: 33px;
+    height: 22px;
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 10px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+}
+.statistics-services li:nth-child(1) .value {
+    background: #ffc238;
+    color: #000000;
+}
+.statistics-services li:nth-child(2) .value {
+    background: #166478;
+}
+.statistics-services li:nth-child(3) .value {
+    background: #818181;
+}
+
+/* services */
+.services h3 a {
+    font-size: 19px;
+    color: #166478;
+    padding-left: 10px;
+}
+.services .prices li {
+    display: block;
+    margin: 10px 0;
+    overflow: hidden;
+}
+.services .prices .service-name {
+    display: inline-block;
+    padding-left: 30px;
+    font-family: 'Ubuntu Bold', sans-serif;
+    position: relative;
+}
+.services .prices .service-name:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid #166478;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    position: absolute;
+    bottom: 7px;
+    left: 18px;
+}
+.services .prices .service-name:after {
+    content: '....................................................................................................................................................................................................................................';
+    display: block;
+    position: absolute;
+    left: calc(100% + 3px);
+    bottom: 0;
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+.services .prices .service-cost {
+    float: right;
+    padding-left: 3px;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+    font-family: 'Ubuntu Bold', sans-serif;
+    color: #166478;
+}
+.services .prices .service-cost span {
+    font-family: inherit;
+    color: inherit;
 }
