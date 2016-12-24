@@ -166,12 +166,36 @@ $(document).ready(function () {
 
     });
 
+    $('.product-item-details .show-more').click(function() {
+        
+        if ($(this).hasClass('active')) {
+            $(this).siblings('.text').removeClass('full');
+        } else {
+            $(this).siblings('.text').addClass('full');
+        }
+
+        $(this).toggleClass('active');
+
+    });
+
     /******************************************************************************************************************
      ******* sliders
      ******************************************************************************************************************/
 
     $('.slider-partners').slick({
         slidesToShow: 4
+    });
+
+    $('.slider-large').slick({
+        fade: true,
+        asNavFor: '.slider-small'
+    });
+    $('.slider-small').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-large',
+        arrows: false,
+        focusOnSelect: true
     });
 
 });
