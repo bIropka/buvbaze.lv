@@ -2205,6 +2205,89 @@ main section h2 {
     font-size: 23px;
 }
 
+/*product item */
+.product-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.product-item-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.product-item-header h1 {
+    display: block;
+    width: 55%;
+}
+.item-header-details {
+    width: 40%;
+}
+
+/* rate */
+.rate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.rate-details > li {
+    display: block;
+    margin: 15px 0;
+}
+.rate-details .detail-name {
+    display: inline-block;
+    vertical-align: middle;
+    width: 190px;
+    font-size: 11px;
+    color: #243e45;
+    text-transform: uppercase;
+}
+.rate-stars, .rate-details .value {
+    display: inline-block;
+    vertical-align: middle;
+}
+.rate-stars li {
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 17px;
+    background: transparent url('../source/images/sprite-stars.png') no-repeat;
+}
+.rate-stars .star-filled {
+    background-position: 0 0;
+}
+.rate-stars .star-empty {
+    background-position: -18px 0;
+}
+.rate-details .value {
+    font-family: 'Ubuntu Bold', sans-serif;
+    font-size: 11px;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+.rate-general {
+    text-align: center;
+    margin-right: 90px;
+}
+.rate-general .text {
+    font-size: 15px;
+    color: #243e45;
+    text-transform: uppercase;
+}
+.rate-general .value {
+    font-size: 27px;
+    color: #243e45;
+    margin-bottom: 5px;
+}
+.rate-general .rate-stars {
+    display: block;
+}
+.rate-general .button-yellow {
+    margin-top: 45px;
+}
 
 /**********************************************************************************************************************
 ********** page task
