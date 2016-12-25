@@ -183,7 +183,10 @@ $(document).ready(function () {
      ******************************************************************************************************************/
 
     $('.slider-partners').slick({
-        slidesToShow: 4
+        slidesToShow: 4,
+        autoplay: true,
+        autoplaySpeed: 1000
+
     });
 
     $('.slider-large').slick({

@@ -1821,13 +1821,11 @@ main section h2 {
 }
 .company-card .company-contacts .value {
     width: calc(100% - 70px);
-    font-family: 'Ubuntu Bold', sans-serif;
     font-size: 12px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 .company-card .company-contacts .value a {
-    font-family: inherit;
     font-size: inherit;
 }
 .company-card .company-contacts .contacts div:nth-child(2) a {
