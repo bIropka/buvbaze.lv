@@ -2412,6 +2412,8 @@ main section h2 {
 }
 
 .product-item-reviews {
+    display: block;
+    width: 100%;
     margin: 20px 0;
 }
 .product-item-reviews .reviews-total:before {
@@ -2426,6 +2428,10 @@ main section h2 {
     color: #243e45;
 }
 
+.product-item-tags {
+    display: block;
+    width: 100%;
+}
 .product-item-tags .title {
     display: inline-block;
     margin-right: 10px;
